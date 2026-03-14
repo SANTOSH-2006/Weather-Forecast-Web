@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <button id="search-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main id="weather-content" class="hidden">
+            <div class="current-weather">
+                <h2 id="city-name">--</h2>
+                <div class="weather-main">
+                    <img id="weather-icon" src="" alt="Weather Icon" style="display: none;">
+                    <div class="temperature">
+                        <span id="temp-value">--</span>°C
+                    </div>
+                </div>
+                <div class="weather-description" id="weather-desc">--</div>
+                
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <span class="label">Humidity</span>
+                        <span class="value" id="humidity">--%</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">Wind</span>
+                        <span class="value" id="wind-speed">-- km/h</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="forecast">
+                <h3>7-Day Forecast</h3>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast items will be injected here -->
+                </div>
+            </div>
+        </main>
+        
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+        
+        <div id="error-message" class="hidden">
+            <p>Could not find weather data for this location. Please try again.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
